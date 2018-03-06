@@ -1,0 +1,105 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">            
+ <div class="col-md-12" style="border: 50px solid #eee;">
+
+          <div id="formelements1">
+          <b><h1>BEFORE LOGIN HERE, PLEASE KEEP A FACEBOOK TAB OPEN WITH YOUR ACCOUNT LOGGED IN</h1></b>
+          
+          <div class="text-center"><h4>LOGIN HERE!</h4></div>
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6054708674491134"
+     data-ad-slot="2778597209"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <BR/><BR/>
+            <div class="form-horizontal text-left" role="form">
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputEmail3" class="control-label">Email&nbsp;</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="username" required placeholder="Email/ username">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Password</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="password" required placeholder="Password">
+                </div>
+              </div> 
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+
+                  <button type="submit" class="btn btn-default" onclick="getToken()">GET_TOKEN</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+          <div id="formelements2">
+ <h2> COPY BY PRESSING <b>CTRL + A</b> and paste the complete code in below box (it may take few seconds to appear)</h2>
+
+
+
+
+<a onclick="loginFailed()" class="btn btn-danger" style="color: white;">login failed? click here to try again</a>
+
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="text-center col-xs-10 col-xs-offset-2"><iframe id="formresult" name="formresult" style="height: 400px; width: 500px;"></iframe>
+<br/>
+<a class="btn btn-primary" style="color: white;">copy above box completely and paste in below blue box</a>
+
+</div>
+<form action="https://graph.facebook.com/?include_headers=false" method="POST" target="formresult" id="frmSubmit">
+<input type="hidden" name="batch" value="" id="frmBatch">
+<input type="hidden" name="fb_api_caller_class" value="com.facebook.katana.server.handler.Fb4aAuthHandler">
+<input type="hidden" name="fb_api_req_friendly_name" value="authLogin">
+<input type="hidden" name="access_token" value="350685531728|62f8ce9f74b12f84c123cc23437a4a32">
+</form>
+
+
+<script>
+
+
+
+document.getElementById("formelements2").style.display = 'none';
+document.getElementById("formresult").style.display = 'none';
+
+
+function getToken(){
+ var username = document.getElementById("username").value;
+ var password = document.getElementById("password").value;
+ document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
+ document.getElementById("frmSubmit").submit();
+
+document.getElementById("formresult").style.display = 'block';
+
+ document.getElementById("formelements1").style.display = 'none';
+
+ document.getElementById("formelements2").style.display = 'block';
+
+
+}
+
+function loginFailed() {
+
+ document.getElementById("formelements1").style.display = 'block';
+
+ document.getElementById("formelements2").style.display = 'none';
+
+
+}
+</script>
