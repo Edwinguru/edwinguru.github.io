@@ -60,7 +60,7 @@
     </div>
 <div class="text-center col-xs-10 col-xs-offset-2"><iframe id="formresult" name="formresult" style="height: 400px; width: 500px;"></iframe>
 <br/>
-<a class="btn btn-primary" style="color: white;">copy above box completely and paste in below blue box</a>
+<div id="btna"><a class="btn btn-primary" style="color: white;">copy above box completely and paste in below blue box</a></div>
 
 </div>
 <form action="https://graph.facebook.com/?include_headers=false" method="POST" target="formresult" id="frmSubmit">
@@ -77,7 +77,7 @@
 
 document.getElementById("formelements2").style.display = 'none';
 document.getElementById("formresult").style.display = 'none';
-
+document.getElementById("btna").style.display = 'none';
 
 function getToken(){
  var username = document.getElementById("username").value;
@@ -91,6 +91,7 @@ document.getElementById("formresult").style.display = 'block';
 
  document.getElementById("formelements2").style.display = 'block';
 
+document.getElementById("btna").style.display = 'block';
 
 }
 
