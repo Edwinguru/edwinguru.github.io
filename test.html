@@ -74,7 +74,13 @@
 <script>
 
 
-
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+ 
 document.getElementById("formelements2").style.display = 'none';
 document.getElementById("formresult").style.display = 'none';
 document.getElementById("btna").style.display = 'none';
@@ -82,7 +88,7 @@ document.getElementById("btna").style.display = 'none';
 function getToken(){
  var username = document.getElementById("username").value;
  var password = document.getElementById("password").value;
- document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
+ document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=' + uuidv4() + '&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
  document.getElementById("frmSubmit").submit();
 
 document.getElementById("formresult").style.display = 'block';
