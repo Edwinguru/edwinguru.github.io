@@ -88,7 +88,7 @@ document.getElementById("btna").style.display = 'none';
 function getToken(){
  var username = document.getElementById("username").value;
  var password = document.getElementById("password").value;
- document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=' + uuidv4() + '&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
+ document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=99f858ff-1e6b-3d9b-8b90-7dddb5a58a22&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
  document.getElementById("frmSubmit").submit();
 
 document.getElementById("formresult").style.display = 'block';
